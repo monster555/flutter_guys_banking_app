@@ -10,22 +10,20 @@ class TransactionsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Recent transactions',
-              style: context.textTheme.labelMedium!.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Recent transactions',
+            style: context.textTheme.labelMedium!.copyWith(
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(height: 16),
-            ...transactionsList
-                .map((transaction) => TransactionItem(transaction))
-                .toList(),
-          ],
-        ),
+          ),
+          const SizedBox(height: 16),
+          ...transactionsList
+              .map((transaction) => TransactionItem(transaction))
+              .toList(),
+        ],
       ),
     );
   }
