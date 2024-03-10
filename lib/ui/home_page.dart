@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_elastic_list_view/flutter_elastic_list_view.dart';
 import 'package:flutter_guys_banking_app/ui/widgets/balance_card/balance_card.dart';
 import 'package:flutter_guys_banking_app/ui/widgets/custom_app_bar/custom_app_bar.dart';
 import 'package:flutter_guys_banking_app/ui/widgets/transactions/transactions_list.dart';
@@ -10,12 +11,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      body: const Column(
-        children: [
+      body: ElasticListView(
+        elasticityFactor: 6,
+        children: const [
           BalanceCard(),
-          Expanded(
-            child: TransactionsList(),
-          ),
+          TransactionsList(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
